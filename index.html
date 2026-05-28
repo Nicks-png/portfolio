@@ -300,13 +300,13 @@
     .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
 
     .modal-img {
-      overflow: hidden;
+      overflow-y: auto; overflow-x: hidden;
       background: #07070F;
       display: flex; align-items: flex-start;
+      max-height: 90vh;
     }
     .modal-img img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: top;
+      width: 100%; height: auto;
       display: block;
     }
 
@@ -358,6 +358,19 @@
     .modal-close:hover { border-color: var(--accent); color: var(--glow); }
 
     .project-card { cursor: pointer; }
+
+    @media print {
+      *, *::before, *::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      nav, .modal-overlay { display: none !important; }
+      body { background: #07070F !important; color: #E8E8E8 !important; }
+      section { page-break-inside: avoid; padding: 40px 0; }
+      .reveal, .reveal-group > * { opacity: 1 !important; transform: none !important; }
+      .reveal-group.visible > * { opacity: 1 !important; transform: none !important; }
+      .glass, .glass-gradient { background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(107,68,204,0.3) !important; }
+      .skill-bar-fill { width: attr(data-width) !important; }
+      .hero-badge::before { display: none; }
+      #hero { min-height: auto; padding: 60px 0 40px; }
+    }
 
     @media (max-width: 768px) {
       section { padding: 72px 0; }
