@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -282,7 +282,6 @@
       transition: opacity 0.3s ease;
     }
     .modal-overlay.open { opacity: 1; pointer-events: all; }
-
     .modal-card {
       position: relative;
       max-width: 980px; width: 100%;
@@ -298,18 +297,13 @@
       box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(107,68,204,0.1);
     }
     .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
-
     .modal-img {
       overflow-y: auto; overflow-x: hidden;
       background: #07070F;
       display: flex; align-items: flex-start;
       max-height: 90vh;
     }
-    .modal-img img {
-      width: 100%; height: auto;
-      display: block;
-    }
-
+    .modal-img img { width: 100%; height: auto; display: block; }
     .modal-body {
       padding: 40px 36px;
       display: flex; flex-direction: column; gap: 18px;
@@ -324,13 +318,9 @@
       font-family: Georgia, serif; font-weight: 400;
       background: linear-gradient(90deg, var(--text), var(--glow));
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin: 0;
+      background-clip: text; margin: 0;
     }
-    .modal-desc {
-      color: var(--text-muted); font-size: 0.9rem;
-      line-height: 1.8; flex: 1;
-    }
+    .modal-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; flex: 1; }
     .modal-stack { display: flex; flex-wrap: wrap; gap: 8px; }
     .modal-stack-tag {
       padding: 4px 12px; border-radius: 100px;
@@ -356,12 +346,10 @@
       transition: all var(--transition); z-index: 10; line-height: 1;
     }
     .modal-close:hover { border-color: var(--accent); color: var(--glow); }
-
     .project-card { cursor: pointer; }
 
     @media print {
       *, *::before, *::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      nav, .modal-overlay { display: none !important; }
       body { background: #07070F !important; color: #E8E8E8 !important; }
       section { page-break-inside: avoid; padding: 40px 0; }
       .reveal, .reveal-group > * { opacity: 1 !important; transform: none !important; }
@@ -582,29 +570,7 @@
         <!-- Run & Bass -->
         <div class="project-card glass-gradient" data-project="runebass">
           <div class="project-thumb">
-            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <defs><linearGradient id="g-rb" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#06040f"/><stop offset="100%" stop-color="#0a071a"/></linearGradient></defs>
-              <rect width="320" height="180" fill="url(#g-rb)"/>
-              <ellipse cx="160" cy="90" rx="110" ry="50" fill="none" stroke="rgba(107,68,204,0.08)" stroke-width="40"/>
-              <ellipse cx="160" cy="90" rx="70" ry="32" fill="none" stroke="rgba(107,68,204,0.10)" stroke-width="20"/>
-              <text x="160" y="28" text-anchor="middle" font-size="9" fill="rgba(196,168,255,0.5)" font-family="monospace" letter-spacing="4">RUN &amp; BASS</text>
-              <rect x="60" y="105" width="8" height="40" rx="2" fill="rgba(107,68,204,0.3)"/>
-              <rect x="72" y="90" width="8" height="55" rx="2" fill="rgba(107,68,204,0.5)"/>
-              <rect x="84" y="80" width="8" height="65" rx="2" fill="rgba(107,68,204,0.7)"/>
-              <rect x="96" y="70" width="8" height="75" rx="2" fill="rgba(107,68,204,0.9)"/>
-              <rect x="108" y="78" width="8" height="67" rx="2" fill="rgba(155,127,232,0.8)"/>
-              <rect x="120" y="65" width="8" height="80" rx="2" fill="rgba(196,168,255,0.9)"/>
-              <rect x="132" y="72" width="8" height="73" rx="2" fill="rgba(155,127,232,0.8)"/>
-              <rect x="144" y="60" width="8" height="85" rx="2" fill="rgba(196,168,255,1)"/>
-              <rect x="156" y="68" width="8" height="77" rx="2" fill="rgba(155,127,232,0.9)"/>
-              <rect x="168" y="55" width="8" height="90" rx="2" fill="rgba(196,168,255,1)"/>
-              <rect x="180" y="63" width="8" height="82" rx="2" fill="rgba(107,68,204,0.9)"/>
-              <rect x="192" y="75" width="8" height="70" rx="2" fill="rgba(107,68,204,0.7)"/>
-              <rect x="204" y="85" width="8" height="60" rx="2" fill="rgba(107,68,204,0.5)"/>
-              <rect x="216" y="95" width="8" height="50" rx="2" fill="rgba(107,68,204,0.4)"/>
-              <rect x="228" y="108" width="8" height="37" rx="2" fill="rgba(107,68,204,0.3)"/>
-              <text x="160" y="162" text-anchor="middle" font-size="7" fill="rgba(196,168,255,0.35)" font-family="monospace" letter-spacing="2">EVENTS · DJS · LOJA</text>
-            </svg>
+            <img src="assets/runebass-site-thumb.png" alt="Run &amp; Bass" />
           </div>
           <div class="project-body">
             <h3>Run &amp; Bass</h3>
@@ -622,33 +588,7 @@
         <!-- Furlan Petshop -->
         <div class="project-card glass-gradient" data-project="furlan">
           <div class="project-thumb">
-            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <defs><linearGradient id="g-fu" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#07090f"/><stop offset="100%" stop-color="#0b0e1c"/></linearGradient></defs>
-              <rect width="320" height="180" fill="url(#g-fu)"/>
-              <rect x="16" y="12" width="288" height="36" rx="6" fill="rgba(107,68,204,0.08)" stroke="rgba(107,68,204,0.2)" stroke-width="1"/>
-              <circle cx="34" cy="30" r="8" fill="rgba(107,68,204,0.3)"/>
-              <text x="34" y="34" text-anchor="middle" font-size="10" fill="#9B7FE8">🐾</text>
-              <text x="52" y="27" font-size="8" fill="rgba(255,255,255,0.7)" font-family="monospace" font-weight="bold">Furlan Petshop</text>
-              <text x="52" y="37" font-size="6" fill="rgba(196,168,255,0.4)" font-family="monospace">Produtos · Serviços · Agendamento</text>
-              <rect x="16" y="58" width="90" height="58" rx="6" fill="rgba(107,68,204,0.07)" stroke="rgba(107,68,204,0.18)" stroke-width="1"/>
-              <text x="61" y="80" text-anchor="middle" font-size="16" fill="#9B7FE8">🐕</text>
-              <text x="61" y="96" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.5)" font-family="monospace">Banho &amp; Tosa</text>
-              <text x="61" y="106" text-anchor="middle" font-size="5" fill="rgba(196,168,255,0.4)" font-family="monospace">R$ 45,00</text>
-              <rect x="116" y="58" width="90" height="58" rx="6" fill="rgba(107,68,204,0.07)" stroke="rgba(107,68,204,0.18)" stroke-width="1"/>
-              <text x="161" y="80" text-anchor="middle" font-size="16" fill="#9B7FE8">🐈</text>
-              <text x="161" y="96" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.5)" font-family="monospace">Veterinário</text>
-              <text x="161" y="106" text-anchor="middle" font-size="5" fill="rgba(196,168,255,0.4)" font-family="monospace">Consulta</text>
-              <rect x="216" y="58" width="88" height="58" rx="6" fill="rgba(107,68,204,0.07)" stroke="rgba(196,168,255,0.25)" stroke-width="1"/>
-              <text x="260" y="80" text-anchor="middle" font-size="16" fill="#C4A8FF">🛒</text>
-              <text x="260" y="96" text-anchor="middle" font-size="6" fill="rgba(255,255,255,0.5)" font-family="monospace">Loja Online</text>
-              <text x="260" y="106" text-anchor="middle" font-size="5" fill="rgba(196,168,255,0.4)" font-family="monospace">+120 produtos</text>
-              <rect x="16" y="126" width="288" height="40" rx="6" fill="rgba(255,255,255,0.02)" stroke="rgba(107,68,204,0.12)" stroke-width="1"/>
-              <rect x="28" y="136" width="80" height="5" rx="2" fill="rgba(107,68,204,0.5)"/>
-              <rect x="28" y="146" width="120" height="3" rx="2" fill="rgba(255,255,255,0.08)"/>
-              <rect x="28" y="153" width="90" height="3" rx="2" fill="rgba(255,255,255,0.06)"/>
-              <rect x="248" y="133" width="44" height="22" rx="4" fill="rgba(107,68,204,0.6)"/>
-              <text x="270" y="148" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.9)" font-family="monospace">Agendar</text>
-            </svg>
+            <img src="assets/furlan-thumb.png" alt="Furlan Petshop" />
           </div>
           <div class="project-body">
             <h3>Furlan Petshop</h3>
@@ -666,31 +606,7 @@
         <!-- Perrotta Fragrances -->
         <div class="project-card glass-gradient" data-project="perrotta">
           <div class="project-thumb">
-            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <defs>
-                <linearGradient id="g-pe" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080710"/><stop offset="100%" stop-color="#0d0b1e"/></linearGradient>
-                <linearGradient id="g-bottle" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(196,168,255,0.25)"/><stop offset="100%" stop-color="rgba(107,68,204,0.1)"/></linearGradient>
-              </defs>
-              <rect width="320" height="180" fill="url(#g-pe)"/>
-              <ellipse cx="160" cy="170" rx="90" ry="12" fill="rgba(107,68,204,0.06)"/>
-              <rect x="136" y="72" width="48" height="88" rx="6" fill="url(#g-bottle)" stroke="rgba(196,168,255,0.3)" stroke-width="1"/>
-              <rect x="148" y="58" width="24" height="18" rx="3" fill="rgba(196,168,255,0.15)" stroke="rgba(196,168,255,0.25)" stroke-width="1"/>
-              <rect x="154" y="52" width="12" height="10" rx="2" fill="rgba(196,168,255,0.2)"/>
-              <rect x="142" y="82" width="36" height="30" rx="2" fill="rgba(255,255,255,0.05)" stroke="rgba(196,168,255,0.15)" stroke-width="0.5"/>
-              <text x="160" y="94" text-anchor="middle" font-size="5" fill="rgba(196,168,255,0.7)" font-family="serif" letter-spacing="1">PERROTTA</text>
-              <text x="160" y="103" text-anchor="middle" font-size="4" fill="rgba(196,168,255,0.45)" font-family="serif" letter-spacing="2">FRAGRANCES</text>
-              <rect x="92" y="88" width="36" height="70" rx="5" fill="rgba(107,68,204,0.08)" stroke="rgba(107,68,204,0.22)" stroke-width="1"/>
-              <rect x="98" y="98" width="24" height="20" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(107,68,204,0.12)" stroke-width="0.5"/>
-              <text x="110" y="110" text-anchor="middle" font-size="4" fill="rgba(155,127,232,0.5)" font-family="serif">NOIR</text>
-              <rect x="192" y="92" width="36" height="66" rx="5" fill="rgba(107,68,204,0.08)" stroke="rgba(107,68,204,0.22)" stroke-width="1"/>
-              <rect x="198" y="100" width="24" height="20" rx="2" fill="rgba(255,255,255,0.04)" stroke="rgba(107,68,204,0.12)" stroke-width="0.5"/>
-              <text x="210" y="112" text-anchor="middle" font-size="4" fill="rgba(155,127,232,0.5)" font-family="serif">GOLD</text>
-              <text x="160" y="20" text-anchor="middle" font-size="7" fill="rgba(196,168,255,0.4)" font-family="serif" letter-spacing="3">E-COMMERCE · PERFUMES</text>
-              <circle cx="56" cy="40" r="14" fill="rgba(107,68,204,0.1)" stroke="rgba(107,68,204,0.2)" stroke-width="1"/>
-              <text x="56" y="44" text-anchor="middle" font-size="11" fill="#9B7FE8">🛍</text>
-              <circle cx="264" cy="40" r="14" fill="rgba(196,168,255,0.08)" stroke="rgba(196,168,255,0.18)" stroke-width="1"/>
-              <text x="264" y="44" text-anchor="middle" font-size="11" fill="#C4A8FF">✦</text>
-            </svg>
+            <img src="assets/perrotta-thumb.png" alt="Perrotta Fragrances" />
           </div>
           <div class="project-body">
             <h3>Perrotta Fragrances</h3>
@@ -708,32 +624,7 @@
         <!-- AI HR Academy -->
         <div class="project-card glass-gradient" data-project="aihr">
           <div class="project-thumb">
-            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
-              <defs><linearGradient id="g-aihr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#060810"/><stop offset="100%" stop-color="#090c1c"/></linearGradient></defs>
-              <rect width="320" height="180" fill="url(#g-aihr)"/>
-              <text x="160" y="20" text-anchor="middle" font-size="8" fill="rgba(196,168,255,0.45)" font-family="monospace" letter-spacing="2">AI HR ACADEMY</text>
-              <rect x="16" y="30" width="288" height="56" rx="8" fill="rgba(107,68,204,0.06)" stroke="rgba(107,68,204,0.15)" stroke-width="1"/>
-              <circle cx="50" cy="58" r="16" fill="rgba(107,68,204,0.2)" stroke="rgba(107,68,204,0.4)" stroke-width="1.5"/>
-              <text x="50" y="62" text-anchor="middle" font-size="12" fill="#9B7FE8">👤</text>
-              <rect x="76" y="44" width="100" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
-              <rect x="76" y="54" width="70" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-              <rect x="76" y="63" width="85" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-              <rect x="220" y="46" width="70" height="18" rx="4" fill="rgba(0,200,100,0.15)" stroke="rgba(0,200,100,0.4)" stroke-width="1"/>
-              <text x="255" y="59" text-anchor="middle" font-size="7" fill="rgba(0,220,100,0.9)" font-family="monospace">✓ Aprovado</text>
-              <rect x="16" y="96" width="90" height="36" rx="6" fill="rgba(107,68,204,0.07)" stroke="rgba(107,68,204,0.15)" stroke-width="1"/>
-              <text x="61" y="112" text-anchor="middle" font-size="8" fill="rgba(196,168,255,0.6)" font-family="monospace">Triagem IA</text>
-              <text x="61" y="123" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace">47 CVs</text>
-              <rect x="116" y="96" width="90" height="36" rx="6" fill="rgba(107,68,204,0.07)" stroke="rgba(107,68,204,0.15)" stroke-width="1"/>
-              <text x="161" y="112" text-anchor="middle" font-size="8" fill="rgba(196,168,255,0.6)" font-family="monospace">Entrevistas</text>
-              <text x="161" y="123" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.3)" font-family="monospace">12 agend.</text>
-              <rect x="216" y="96" width="88" height="36" rx="6" fill="rgba(196,168,255,0.07)" stroke="rgba(196,168,255,0.2)" stroke-width="1"/>
-              <text x="260" y="112" text-anchor="middle" font-size="8" fill="rgba(196,168,255,0.8)" font-family="monospace">Contratados</text>
-              <text x="260" y="123" text-anchor="middle" font-size="7" fill="rgba(196,168,255,0.5)" font-family="monospace">3 vagas</text>
-              <rect x="16" y="142" width="288" height="26" rx="5" fill="rgba(255,255,255,0.02)" stroke="rgba(107,68,204,0.1)" stroke-width="1"/>
-              <rect x="28" y="151" width="40" height="3" rx="2" fill="rgba(107,68,204,0.5)"/>
-              <rect x="28" y="158" width="60" height="3" rx="2" fill="rgba(255,255,255,0.06)"/>
-              <text x="270" y="158" text-anchor="middle" font-size="7" fill="rgba(107,68,204,0.7)" font-family="monospace">gemini ✦</text>
-            </svg>
+            <img src="assets/aihr-thumb.png" alt="AI HR Academy" />
           </div>
           <div class="project-body">
             <h3>AI HR Academy</h3>
@@ -1118,6 +1009,7 @@
       if (rect.top < window.innerHeight) bar.style.width = (bar.dataset.width || 0) + '%';
     });
 
+
     // ── PROJECT MODAL ──
     const PROJECTS = {
       runebass: {
@@ -1215,6 +1107,7 @@
         modalImg.src = p.img;
         modalImg.alt = p.title;
         imgWrap.style.display = '';
+        document.getElementById('modalCard').style.gridTemplateColumns = '';
       } else {
         imgWrap.style.display = 'none';
         document.getElementById('modalCard').style.gridTemplateColumns = '1fr';
@@ -1226,13 +1119,11 @@
     function closeModal() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
-      document.getElementById('modalCard').style.gridTemplateColumns = '';
     }
 
     document.getElementById('modalClose').addEventListener('click', closeModal);
     overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
     document.querySelectorAll('.project-card[data-project]').forEach(card => {
       card.addEventListener('click', () => openModal(card.dataset.project));
     });
