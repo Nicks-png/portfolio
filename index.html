@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -271,95 +271,6 @@
     footer a { color: var(--text-muted); }
     footer a:hover { color: var(--glow); }
 
-    /* ── PROJECT MODAL ── */
-    .modal-overlay {
-      position: fixed; inset: 0; z-index: 500;
-      background: rgba(7,7,15,0.88);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      display: flex; align-items: center; justify-content: center;
-      padding: 20px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-    .modal-overlay.open { opacity: 1; pointer-events: all; }
-    .modal-card {
-      position: relative;
-      max-width: 980px; width: 100%;
-      max-height: 90vh;
-      background: rgba(14,14,26,0.95);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius);
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      overflow: hidden;
-      transform: translateY(28px) scale(0.96);
-      transition: transform 0.38s cubic-bezier(0.4,0,0.2,1);
-      box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(107,68,204,0.1);
-    }
-    .modal-overlay.open .modal-card { transform: translateY(0) scale(1); }
-    .modal-img {
-      overflow-y: auto; overflow-x: hidden;
-      background: #07070F;
-      display: flex; align-items: flex-start;
-      max-height: 90vh;
-    }
-    .modal-img img { width: 100%; height: auto; display: block; }
-    .modal-body {
-      padding: 40px 36px;
-      display: flex; flex-direction: column; gap: 18px;
-      overflow-y: auto; max-height: 90vh;
-    }
-    .modal-eyebrow {
-      font-family: var(--font-code); font-size: 0.7rem;
-      letter-spacing: 0.14em; color: var(--accent-2); text-transform: uppercase;
-    }
-    .modal-title {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-family: Georgia, serif; font-weight: 400;
-      background: linear-gradient(90deg, var(--text), var(--glow));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; margin: 0;
-    }
-    .modal-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.8; flex: 1; }
-    .modal-stack { display: flex; flex-wrap: wrap; gap: 8px; }
-    .modal-stack-tag {
-      padding: 4px 12px; border-radius: 100px;
-      font-size: 0.75rem; font-family: var(--font-code);
-      background: rgba(107,68,204,0.10);
-      border: 1px solid rgba(107,68,204,0.28); color: var(--glow);
-    }
-    .modal-link {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 22px; border-radius: var(--radius-sm);
-      font-size: 0.9rem; font-weight: 500; color: var(--text);
-      background: var(--glass-bg); border: 1px solid var(--glass-border);
-      transition: all var(--transition); text-decoration: none; align-self: flex-start;
-    }
-    .modal-link:hover { border-color: var(--accent); color: var(--glow); }
-    .modal-close {
-      position: absolute; top: 14px; right: 14px;
-      width: 34px; height: 34px; border-radius: 50%;
-      border: 1px solid var(--glass-border); background: rgba(7,7,15,0.7);
-      backdrop-filter: blur(8px); cursor: pointer;
-      color: var(--text-muted); font-size: 1.1rem;
-      display: flex; align-items: center; justify-content: center;
-      transition: all var(--transition); z-index: 10; line-height: 1;
-    }
-    .modal-close:hover { border-color: var(--accent); color: var(--glow); }
-    .project-card { cursor: pointer; }
-
-    @media print {
-      *, *::before, *::after { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-      body { background: #07070F !important; color: #E8E8E8 !important; }
-      section { page-break-inside: avoid; padding: 40px 0; }
-      .reveal, .reveal-group > * { opacity: 1 !important; transform: none !important; }
-      .reveal-group.visible > * { opacity: 1 !important; transform: none !important; }
-      .glass, .glass-gradient { background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(107,68,204,0.3) !important; }
-      .skill-bar-fill { width: attr(data-width) !important; }
-      .hero-badge::before { display: none; }
-      #hero { min-height: auto; padding: 60px 0 40px; }
-    }
-
     @media (max-width: 768px) {
       section { padding: 72px 0; }
       .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(7,7,15,0.97); padding: 24px; gap: 20px; border-bottom: 1px solid var(--glass-border); }
@@ -369,9 +280,6 @@
       .contato-card { padding: 28px 20px; }
       .projects-grid { grid-template-columns: 1fr; }
       .hero-terminal { max-width: 100%; }
-      .modal-card { grid-template-columns: 1fr; }
-      .modal-img { height: 220px; }
-      .modal-body { padding: 24px 20px; }
     }
     @media (max-width: 480px) {
       .btn-group { flex-direction: column; }
@@ -567,64 +475,34 @@
       </div>
       <div class="projects-grid reveal-group">
 
-        <!-- Run & Bass -->
-        <div class="project-card glass-gradient" data-project="runebass">
-          <div class="project-thumb">
-            <img src="assets/runebass-site-thumb.png" alt="Run &amp; Bass" />
-          </div>
-          <div class="project-body">
-            <h3>Run &amp; Bass</h3>
-            <p>Site completo para clube de música eletrônica — agenda de eventos, galeria, loja e área exclusiva para membros.</p>
-            <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
-            <div class="project-links">
-              <a href="https://github.com/Nicks-png/runebass-site" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Furlan Petshop -->
-        <div class="project-card glass-gradient" data-project="furlan">
-          <div class="project-thumb">
-            <img src="assets/furlan-thumb.png" alt="Furlan Petshop" />
-          </div>
-          <div class="project-body">
-            <h3>Furlan Petshop</h3>
-            <p>Site institucional e loja online para pet shop com catálogo de produtos, carrinho e gestão de pedidos.</p>
-            <div class="project-tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">Tailwind</span><span class="tag">Node.js</span></div>
-            <div class="project-links">
-              <a href="https://github.com/Nicks-png/Furlan-petshop" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Perrotta Fragrances -->
-        <div class="project-card glass-gradient" data-project="perrotta">
-          <div class="project-thumb">
-            <img src="assets/perrotta-thumb.png" alt="Perrotta Fragrances" />
-          </div>
-          <div class="project-body">
-            <h3>Perrotta Fragrances</h3>
-            <p>E-commerce de perfumes com catálogo completo, carrinho de compras, checkout e integração com meios de pagamento.</p>
-            <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Next.js</span></div>
-            <div class="project-links">
-              <a href="https://github.com/Nicks-png/Perrotta-fragances" target="_blank" rel="noopener" class="project-link">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                GitHub
-              </a>
-            </div>
-          </div>
-        </div>
-
         <!-- AI HR Academy -->
-        <div class="project-card glass-gradient" data-project="aihr">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
-            <img src="assets/aihr-thumb.png" alt="AI HR Academy" />
+            <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+              <defs><linearGradient id="g-hr" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0d0b1a"/><stop offset="100%" stop-color="#0b0918"/></linearGradient></defs>
+              <rect width="320" height="180" fill="url(#g-hr)"/>
+              <rect x="0" y="0" width="72" height="180" fill="rgba(107,68,204,0.07)"/>
+              <circle cx="36" cy="30" r="14" fill="rgba(107,68,204,0.15)" stroke="rgba(107,68,204,0.4)" stroke-width="1"/>
+              <text x="36" y="35" text-anchor="middle" font-size="12" fill="#9B7FE8">HR</text>
+              <rect x="14" y="58" width="44" height="5" rx="3" fill="rgba(107,68,204,0.3)"/>
+              <rect x="14" y="72" width="44" height="5" rx="3" fill="rgba(255,255,255,0.1)"/>
+              <rect x="14" y="86" width="44" height="5" rx="3" fill="rgba(255,255,255,0.1)"/>
+              <text x="90" y="28" font-size="9" fill="rgba(255,255,255,0.5)" font-family="monospace">Triagem de Candidatos</text>
+              <rect x="88" y="36" width="100" height="48" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(107,68,204,0.2)" stroke-width="1"/>
+              <circle cx="104" cy="52" r="8" fill="rgba(107,68,204,0.2)"/>
+              <rect x="118" y="47" width="56" height="4" rx="2" fill="rgba(255,255,255,0.3)"/>
+              <rect x="118" y="55" width="38" height="3" rx="2" fill="rgba(255,255,255,0.15)"/>
+              <text x="88" y="63" font-size="6" fill="rgba(196,168,255,0.7)">✓ Aprovado</text>
+              <rect x="88" y="92" width="100" height="48" rx="6" fill="rgba(255,255,255,0.05)" stroke="rgba(107,68,204,0.2)" stroke-width="1"/>
+              <circle cx="104" cy="108" r="8" fill="rgba(107,68,204,0.2)"/>
+              <text x="88" y="119" font-size="6" fill="rgba(255,180,0,0.7)">⏳ Em análise</text>
+              <rect x="200" y="36" width="110" height="104" rx="8" fill="rgba(107,68,204,0.06)" stroke="rgba(107,68,204,0.2)" stroke-width="1"/>
+              <text x="255" y="56" text-anchor="middle" font-size="8" fill="rgba(196,168,255,0.8)">Score IA</text>
+              <text x="255" y="90" text-anchor="middle" font-size="28" fill="#C4A8FF" font-weight="bold">87</text>
+              <text x="255" y="104" text-anchor="middle" font-size="7" fill="rgba(255,255,255,0.4)">de 100</text>
+              <rect x="216" y="112" width="78" height="5" rx="3" fill="rgba(255,255,255,0.06)"/>
+              <rect x="216" y="112" width="68" height="5" rx="3" fill="rgba(107,68,204,0.5)"/>
+            </svg>
           </div>
           <div class="project-body">
             <h3>AI HR Academy</h3>
@@ -640,7 +518,7 @@
         </div>
 
         <!-- Niche Intelligence -->
-        <div class="project-card glass-gradient" data-project="niche">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
             <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
               <defs><linearGradient id="g-ni" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080d14"/><stop offset="100%" stop-color="#0b1220"/></linearGradient></defs>
@@ -698,7 +576,7 @@
         </div>
 
         <!-- Uber Guincho -->
-        <div class="project-card glass-gradient" data-project="guincho">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
             <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
               <defs><linearGradient id="g-ug" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#090a14"/><stop offset="100%" stop-color="#0d0e1a"/></linearGradient></defs>
@@ -743,7 +621,7 @@
         </div>
 
         <!-- Pesquisa Web -->
-        <div class="project-card glass-gradient" data-project="pesquisa">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
             <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
               <defs><linearGradient id="g-pw" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080b14"/><stop offset="100%" stop-color="#0c0f1c"/></linearGradient></defs>
@@ -781,7 +659,7 @@
         </div>
 
         <!-- Auxiliar de Produtos -->
-        <div class="project-card glass-gradient" data-project="produtos">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
             <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
               <defs><linearGradient id="g-ap" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#080a12"/><stop offset="100%" stop-color="#0c0f1a"/></linearGradient></defs>
@@ -821,7 +699,7 @@
         </div>
 
         <!-- Auxiliar de Contas -->
-        <div class="project-card glass-gradient" data-project="contas">
+        <div class="project-card glass-gradient">
           <div class="project-thumb">
             <svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
               <defs><linearGradient id="g-ac" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#07080f"/><stop offset="100%" stop-color="#0b0c18"/></linearGradient></defs>
@@ -969,26 +847,6 @@
     </div>
   </footer>
 
-  <!-- PROJECT MODAL -->
-  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
-    <div class="modal-card" id="modalCard">
-      <button class="modal-close" id="modalClose" aria-label="Fechar">&#x2715;</button>
-      <div class="modal-img">
-        <img id="modalImg" src="" alt="" />
-      </div>
-      <div class="modal-body">
-        <span class="modal-eyebrow" id="modalEyebrow"></span>
-        <h2 class="modal-title" id="modalTitle"></h2>
-        <p class="modal-desc" id="modalDesc"></p>
-        <div class="modal-stack" id="modalStack"></div>
-        <a class="modal-link" id="modalLink" href="#" target="_blank" rel="noopener">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          Ver no GitHub
-        </a>
-      </div>
-    </div>
-  </div>
-
   <script>
     const revealEls = document.querySelectorAll('.reveal, .reveal-group');
     const observer = new IntersectionObserver((entries) => {
@@ -1007,125 +865,6 @@
     document.querySelectorAll('.skill-bar-fill').forEach(bar => {
       const rect = bar.getBoundingClientRect();
       if (rect.top < window.innerHeight) bar.style.width = (bar.dataset.width || 0) + '%';
-    });
-
-
-    // ── PROJECT MODAL ──
-    const PROJECTS = {
-      runebass: {
-        eyebrow: 'site · música eletrônica',
-        title: 'Run & Bass',
-        desc: 'Site completo para o clube Run & Bass, focado em música eletrônica e cultura underground. Conta com agenda de próximos eventos, galeria de fotos das festas, loja de produtos e merch exclusivo, área de membros com benefícios e página dedicada aos DJs residentes. O design segue a estética do clube: tipografia bold, cores escuras e visual imersivo.',
-        stack: ['HTML', 'CSS', 'JavaScript'],
-        img: 'assets/runebass-site-preview.png',
-        link: 'https://github.com/Nicks-png/runebass-site'
-      },
-      furlan: {
-        eyebrow: 'fullstack · e-commerce',
-        title: 'Furlan Petshop',
-        desc: 'Site institucional e e-commerce completo para o Furlan Pet Shop, localizado em Vila Pirituba, SP. Desenvolvido em Next.js com React e Tailwind CSS, oferece catálogo de produtos para cães, gatos e outros pets, avaliações Google integradas (4.5★ · 253 avaliações), sistema de pedidos, atendimento via WhatsApp e página de serviços. Backend em Node.js com gestão de pedidos e painel administrativo.',
-        stack: ['Next.js', 'React', 'Tailwind CSS', 'Node.js'],
-        img: 'assets/furlan-preview.png',
-        link: 'https://github.com/Nicks-png/Furlan-petshop'
-      },
-      perrotta: {
-        eyebrow: 'e-commerce · perfumes',
-        title: 'Perrotta Fragrances',
-        desc: 'E-commerce de perfumes premium com 12 fragrâncias curadas das maiores maisons do mundo — Chanel, Dior, Valentino, Prada, Hugo Boss, Dolce & Gabbana, Parfums de Marly e Carolina Herrera. Desenvolvido em HTML/CSS/JS puro, conta com catálogo completo com filtros por marca e gênero, busca em tempo real, carrinho persistente via localStorage e checkout funcional. Backend com Node.js + MercadoPago Bricks em desenvolvimento.',
-        stack: ['HTML', 'CSS', 'JavaScript', 'Next.js'],
-        img: 'assets/perrotta-preview.png',
-        link: 'https://github.com/Nicks-png/Perrotta-fragances'
-      },
-      aihr: {
-        eyebrow: 'plataforma B2B · IA · RH',
-        title: 'AI HR Academy',
-        desc: 'Plataforma B2B de recrutamento com IA desenvolvida para a Accor Brasil. Realiza triagem automatizada de currículos via LLMs (Gemini, Groq, OpenRouter), pontuando candidatos em 5 dimensões: técnico, alinhamento cultural (Heartist®), experiência, estabilidade e potencial. Inclui pipeline visual de candidatos, exportação XLSX, comunicação automatizada via WhatsApp (Baileys), painel admin com controle de permissões por role e integração com Outlook via PKCE.',
-        stack: ['Node.js', 'SQLite', 'AI / LLMs', 'WhatsApp API', 'Express'],
-        img: 'assets/aihr-preview.png',
-        link: 'https://github.com/Nicks-png/ai-hr-academy'
-      },
-      niche: {
-        eyebrow: 'pipeline · IA multi-agente',
-        title: 'Niche Intelligence',
-        desc: 'Pipeline de 6 agentes de IA autônomos para pesquisa e análise de nichos de mercado. Cada agente tem uma responsabilidade específica: coleta de dados, análise de tendências, processamento por IA, síntese de informações, geração de relatório e validação final. Utiliza OpenRouter como gateway de modelos. Ideal para fundadores, consultores e analistas que precisam mapear oportunidades de mercado com rapidez e profundidade.',
-        stack: ['Node.js', 'AI Agents', 'OpenRouter', 'JavaScript'],
-        img: null,
-        link: 'https://github.com/Nicks-png/niche-intelligence'
-      },
-      guincho: {
-        eyebrow: 'app · gestão de serviços',
-        title: 'Uber Guincho',
-        desc: 'Aplicação de gestão e despacho de serviços de guincho com banco relacional. Permite controle completo de pedidos de reboque, rastreamento de rotas, histórico de atendimentos e gestão de operadores. Desenvolvido com TypeScript no backend e PostgreSQL com PLpgSQL para lógica de negócio no banco de dados.',
-        stack: ['TypeScript', 'PostgreSQL', 'PLpgSQL'],
-        img: null,
-        link: 'https://github.com/Nicks-png/uber-guincho'
-      },
-      pesquisa: {
-        eyebrow: 'ferramenta · web scraping',
-        title: 'Pesquisa Web',
-        desc: 'Comparador de preços mobile-first com scraping automatizado em Python. Busca e consolida preços de produtos em múltiplas fontes (Mercado Livre, Amazon, Magazine Luiza) em tempo real, exibindo a melhor oferta de forma clara. Interface web leve e responsiva, ideal para comparação rápida antes de uma compra.',
-        stack: ['Python', 'HTML', 'Web Scraping'],
-        img: null,
-        link: 'https://github.com/Nicks-png/pesquisa-web'
-      },
-      produtos: {
-        eyebrow: 'ferramenta · análise de produto',
-        title: 'Auxiliar de Produtos',
-        desc: 'Ferramenta de análise e apoio à tomada de decisão de produto. Automatiza a coleta e processamento de dados de uso, gerando insights acionáveis sobre conversão, churn e engajamento de usuários. Projetada para PMs e analistas que precisam de visibilidade rápida sobre métricas de produto sem dependência de ferramentas complexas.',
-        stack: ['Python', 'HTML'],
-        img: null,
-        link: 'https://github.com/Nicks-png/auxiliar-de-produtos'
-      },
-      contas: {
-        eyebrow: 'app · finanças pessoais',
-        title: 'Auxiliar de Contas',
-        desc: 'Sistema de controle financeiro pessoal com interface web intuitiva. Permite registrar, categorizar e visualizar despesas e receitas, com gráfico de distribuição por categoria, histórico de transações e saldo disponível em tempo real. Desenvolvido em HTML, CSS e JavaScript puro, sem dependência de frameworks.',
-        stack: ['HTML', 'CSS', 'JavaScript'],
-        img: null,
-        link: 'https://github.com/Nicks-png/Auxiliar-de-Contas'
-      }
-    };
-
-    const overlay = document.getElementById('modalOverlay');
-    const modalImg = document.getElementById('modalImg');
-    const modalEyebrow = document.getElementById('modalEyebrow');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalStack = document.getElementById('modalStack');
-    const modalLink = document.getElementById('modalLink');
-
-    function openModal(key) {
-      const p = PROJECTS[key];
-      if (!p) return;
-      modalEyebrow.textContent = p.eyebrow;
-      modalTitle.textContent = p.title;
-      modalDesc.textContent = p.desc;
-      modalLink.href = p.link;
-      modalStack.innerHTML = p.stack.map(t => `<span class="modal-stack-tag">${t}</span>`).join('');
-      const imgWrap = document.querySelector('.modal-img');
-      if (p.img) {
-        modalImg.src = p.img;
-        modalImg.alt = p.title;
-        imgWrap.style.display = '';
-        document.getElementById('modalCard').style.gridTemplateColumns = '';
-      } else {
-        imgWrap.style.display = 'none';
-        document.getElementById('modalCard').style.gridTemplateColumns = '1fr';
-      }
-      overlay.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    document.getElementById('modalClose').addEventListener('click', closeModal);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-    document.querySelectorAll('.project-card[data-project]').forEach(card => {
-      card.addEventListener('click', () => openModal(card.dataset.project));
     });
 
     const toggle = document.getElementById('navToggle');

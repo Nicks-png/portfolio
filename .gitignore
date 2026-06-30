@@ -4,3 +4,5 @@ assets/package.json
 assets/package-lock.json
 nicolas-salome-portfolio.pdf
 assets/portfolio-pdf-preview.png
+
+.vercel
